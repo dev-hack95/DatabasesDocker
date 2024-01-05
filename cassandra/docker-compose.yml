@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  cassandra:
+    image: cassandra:latest
+    ports:
+      - '9042:9042'
+    volumes:
+      - ./db/cassandra:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=testnet
+
+
+volumes:
+  db:
+    driver: local
